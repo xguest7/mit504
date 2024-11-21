@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            text-align: center;
+        }
+    </style>
+
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+</head>
+<body>
+    경로 : 
+    <input type="text" id="t1" placeholder="예> index.html">
+    <select>
+        <option value="1">새 창</option>
+        <option value="2">현재 창</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="itv()">적용</button><br><br>
+    <table>
+        <tr>
+            <td><a id="fa0" href="http://m-it.iptime.org:25780/cks/" target="_blank">차기석</a></td>
+            <td><a id="fa1" href="http://m-it.iptime.org:25780/ksj1/" target="_blank">김성준</a></td>
+            <td><a id="fa2" href="http://m-it.iptime.org:25780/sjs/" target="_blank">서준석</a></td>
+            <td></td>
+            <td><a id="fa3" href="http://m-it.iptime.org:25780/yjh/" target="_blank">윤종희</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><iframe id="h1" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe id="h2" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe id="h3" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe width="10px" height="100px" style="background-color: black;"></iframe></td>
+            <td><iframe id="h4" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe width="200px" height="100px"></iframe></td>
+        </tr>
+        <tr>
+            <td><a id="fa4" href="http://m-it.iptime.org:25780/ksh/" target="_blank">고석호</a></td>
+            <td><a id="fa5" href="http://m-it.iptime.org:25780/phs/" target="_blank">박흥석</a></td>
+            <td><a id="fa6" href="http://m-it.iptime.org:25780/kni/" target="_blank">김남일</a></td>
+            <td></td>
+            <td><a id="fa7" href="http://m-it.iptime.org:25780/omh/" target="_blank">오민희</a></td>
+            <td><a id="fa8" href="http://m-it.iptime.org:25780/jsh/" target="_blank">조숙희</a></td>
+        </tr>
+        <tr>
+            <td><iframe id="h5" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe id="h6" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe id="h7" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe width="10px" height="100px" style="background-color: black;"></iframe></td>
+            <td><iframe id="h8" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe id="h9" src="" width="200px" height="100px"></iframe></td>
+        </tr>
+        <tr>
+            <td><a id="fa9" href="http://m-it.iptime.org:25780/sjw/" target="_blank">신재욱</a></td>
+            <td></td>
+            <td><a id="fa10" href="http://m-it.iptime.org:25780/ksj2/" target="_blank">김서준</a></td>
+            <td></td>
+            <td><a id="fa11" href="http://m-it.iptime.org:25780/hjh/" target="_blank">한진희</a></td>
+            <td><a id="fa12" href="http://m-it.iptime.org:25780/pjw/" target="_blank">백진우</a></td>
+        </tr>
+        <tr>
+            <td><iframe id="h10" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe width="200px" height="100px"></iframe></td>
+            <td><iframe id="h11 "src="" width="200px" height="100px"></iframe></td>
+            <td><iframe width="10px" height="100px" style="background-color: black;"></iframe></td>
+            <td><iframe id="h12" src="" width="200px" height="100px"></iframe></td>
+            <td><iframe id="h13" src="" width="200px" height="100px"></iframe></td>
+        </tr>
+    </table>
+
+    <script>
+        function adj(){
+            let u = "http://m-it.iptime.org:25780/";
+            let p1 = $("#t1").val();
+            let fa1 = document.getElementsByClassName("fa");
+            
+            document.getElementById("h1").setAttribute("src",u+'cks/'+p1);
+            document.getElementById("h2").setAttribute("src",u+'ksj1/'+p1);
+            document.getElementById("h3").setAttribute("src",u+'sjs/'+p1);
+            document.getElementById("h4").setAttribute("src",u+'yjh/'+p1);
+            document.getElementById("h5").setAttribute("src",u+'ksh/'+p1);
+            document.getElementById("h6").setAttribute("src",u+'phs/'+p1);
+            document.getElementById("h7").setAttribute("src",u+'kni/'+p1);
+            document.getElementById("h8").setAttribute("src",u+'omh/'+p1);
+            document.getElementById("h9").setAttribute("src",u+'jsh/'+p1);
+            document.getElementById("h10").setAttribute("src",u+'sjw/'+p1);
+            document.getElementById("h11").setAttribute("src",u+'ksj2/'+p1);
+            document.getElementById("h12").setAttribute("src",u+'hjh/'+p1);
+            document.getElementById("h13").setAttribute("src",u+'pjw/'+p1);
+
+            if($("select").val() == 1){
+                for(let i=0;i<13;i++){
+                    document.getElementById("fa"+i).setAttribute("href",document.getElementById("fa"+i).getAttribute("href")+p1);
+                    document.getElementById("fa"+i).setAttribute("target","_blank");
+                }
+            }else{
+                for(let i=0;i<13;i++){
+                    document.getElementById("fa"+i).setAttribute("href",document.getElementById("fa"+i).getAttribute("href")+p1);
+                    document.getElementById("fa"+i).setAttribute("target","_parent");
+                }
+            }
+        }
+
+        function itv(){
+            setInterval(adj(),5000);
+        }
+    </script>
+</body>
+</html>
