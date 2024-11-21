@@ -6,11 +6,25 @@
     <title>흐으으으음</title>
 </head>
 <body>
-    <button onclick="comeback()">아무 일도 안일어남</button>
+    <button onclick="comeback()" id="bt" style="width: 150px; height: 75px;">아무 일도 안일어남</button>
 
     <script>
+        document.getElementById("bt").addEventListener("mouseover",mover);
+        document.getElementById("bt").addEventListener("mouseleave",mleave);
+        document.getElementById("bt").addEventListener("mousedown",stay);
         function comeback(){
             history.back();
+        }
+        function mover(){
+            document.getElementById("bt").innerHTML="뒤로가기";
+        }
+        function mleave(){
+            document.getElementById("bt").innerHTML="아무 일도 안일어남";
+            document.getElementById("bt").style.fontSize="13px";
+        }
+        function stay(){
+            document.getElementById("bt").innerHTML="S..T..A..Y..";
+            document.getElementById("bt").style.fontSize="75px";
         }
     </script>
 </body>
