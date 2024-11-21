@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function signUp(){
+            id = document.getElementById("id");
+            pw = document.getElementById("pw");
+            if(id.value.length<5){
+                alert("아이디는 5자이상");
+            }else if(pw.value.length<8){
+                alert("패스워드는 8자이상");
+            }else if(id.value.length>=5 && pw.value.length>8){
+                alert("정상적으로 회원가입되었습니다.")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="#">
+        ID:<input type="text" id="id" placeholder="5자이상 입력해주세요."><br>
+        PW:<input type="password" id="pw" placeholder="8자이상 입력해주세요/"><br>
+        <input type="submit" value="회원가입" onclick="signUp()">
+    </form>
+</body>
+</html>
