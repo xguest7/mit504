@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="cat.jpg" width="300px" height="300px" id="img" onmousemove="change()">
+    <h5>이 고양이 뒤엔 더 귀여운 고양이가 숨어있대요.</h5>
+    <h2 id ="title" style="color: yellowgreen;">Welcome to the homepage</h2>
+    <a href="edu.html"><button>이제까지 배운 내용이래요!</button></a> 
+    <P></P>
+    <button id='bye' onclick="bye()">안녕히가세요</button>
+    
+
+    <script>
+        function change() {
+            const img = document.getElementById('img');
+            img.src = "cat2.png"
+        }
+
+        
+            
+        
+        function bye() {
+            const title = document.getElementById('title');
+            const bye= document.getElementById('bye');
+            
+            title.innerText = "Good bye to this page"         
+            bye.innerText = "다음에 또봐요!"
+        }
+    </script>
+</body>
+</html>
