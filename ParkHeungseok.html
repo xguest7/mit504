@@ -12,6 +12,7 @@
         document.getElementById("bt").addEventListener("mouseover",mover);
         document.getElementById("bt").addEventListener("mouseleave",mleave);
         document.getElementById("bt").addEventListener("mousedown",stay);
+        document.getElementById("bt").addEventListener("mouseup",toolate);
         function comeback(){
             history.back();
         }
@@ -25,6 +26,9 @@
         function stay(){
             document.getElementById("bt").innerHTML="S..T..A..Y..";
             document.getElementById("bt").style.fontSize="75px";
+        }
+        function toolate(){
+            alert("이미 늦었어");
         }
     </script>
 </body>
